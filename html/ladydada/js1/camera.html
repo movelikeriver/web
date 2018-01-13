@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html class="ui-mobile" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Lady DaDa - Home</title>
+    <link rel="stylesheet" href="ladydada.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+
+    <style>
+      @media all and (max-width: 350px) {
+      .my-breakpoint .ui-block-a, 
+      .my-breakpoint .ui-block-b, 
+      .my-breakpoint .ui-block-c { 
+      width: 100%; 
+      float:none; 
+      }
+      }
+
+      .cam_div {
+      width: 100%;
+      height: 100%;
+      float: none;
+      }
+
+      .single_img {
+      max-width: 100%;
+      max-height: 100%;
+      }
+
+      .grid_img {
+      max-width: 99%;
+      }
+
+    </style>
+
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+  </head>
+  <body>
+
+    <!-- step 1: take a picture -->
+    <div id="step1" data-role="page">
+      <header data-role="header">
+	<h1>Lady DaDa - Camera</h1>
+      </header>
+
+      <article data-role="content">
+
+	<p>Okay, you took a beautiful pic like this...</p>
+
+	<div class="cam_div ui-responsive">
+	  <img class="single_img" src="http://2.bp.blogspot.com/-PejP02hYrlY/VDKM50CIeiI/AAAAAAAASH0/alWHCFZLZJs/s1600/BOW%2B5.jpg">
+	</div>
+
+	<a href="#step2" data-role="button">Upload</a> 
+
+      </article>
+
+      <footer data-role="footer" data-position="fixed">
+	<nav data-role="navbar">
+          <ul>
+	    <li><a href="index.html" data-icon="home">Home</a></li>
+	    <li><a href="search.html" data-icon="search">Explore</a></li>
+	    <li><a href="camera.html" data-icon="plus">Camera</a></li>
+	    <li><a href="#" data-icon="grid">Editor</a></li>
+	    <li><a href="#" data-icon="star">Shopping</a></li>
+          </ul>
+	</nav>
+      </footer>
+    </div>
+
+    <!-- step 2: select elements -->
+    <div id="step2" data-role="page">
+      <header data-role="header">
+	<h1>Lady DaDa - Camera</h1>
+      </header>
+
+      <article data-role="content">
+	<p>Congradulations, fashion DaDa! The pic has been Uploaded!  Do you want to explore further? (apparently, the system looks too smart to be able to recommend these items...)</p>
+
+	<div class="ui-grid-b my-breakpoint ui-responsive">
+	  <div class="ui-block-a">
+	    <img class="grid_img" src="http://ak2.polyvoreimg.com/cgi/img-set/cid/139098999/id/9hl_lzhh5BGV4LQ_Nxsv_g/size/l.jpg">
+	  </div>
+	  <div class="ui-block-b">
+	    <img class="grid_img" src="http://ak2.polyvoreimg.com/cgi/img-thing/size/m/tid/90436618.jpg">
+	  </div>
+	  <div class="ui-block-c">
+	    <img class="grid_img" src="http://ak2.polyvoreimg.com/cgi/img-thing/size/m/tid/120017031.jpg">
+	  </div>
+	  <div class="ui-block-a">
+	    <img class="grid_img" src="http://ak2.polyvoreimg.com/cgi/img-thing/size/m/tid/68683712.jpg">
+	  </div>
+	  <div class="ui-block-b">
+	    <img class="grid_img" class="grid_img" src="http://2.bp.blogspot.com/-PejP02hYrlY/VDKM50CIeiI/AAAAAAAASH0/alWHCFZLZJs/s898/BOW%2B5.jpg">
+	  </div>
+	  <div class="ui-block-c">
+	    <img class="grid_img" src="http://ak2.polyvoreimg.com/cgi/img-thing/size/m/tid/98296654.jpg">
+	  </div>
+	  <div class="ui-block-a">
+	    <img class="grid_img" src="http://ak2.polyvoreimg.com/cgi/img-set/cid/139364052/id/7jli4Ndj5BGWS7iv2__Y_w/size/l.jpg">
+	  </div>
+	  <div class="ui-block-b">
+	    <img class="grid_img" src="http://ak1.polyvoreimg.com/cgi/img-thing/size/m/tid/102424151.jpg">
+	  </div>
+	  <div class="ui-block-c">
+	    <img class="grid_img" src="http://ak2.polyvoreimg.com/cgi/img-set/id/sMPTYJ5a5BGauhfF2__Y_w/size/l.jpg">
+	  </div>
+	</div><!-- /grid-b -->
+
+	<nav data-role="navbar">
+	  <a href="#step1" data-role="button">Take a pic again</a> 
+	  <a href="#" data-role="button">Show me other pics</a> 
+	  <a href="#step3" data-role="button">Create magzine</a> 
+	</nav>
+
+      </article>
+
+      <footer data-role="footer" data-position="fixed">
+	<nav data-role="navbar">
+          <ul>
+	    <li><a href="index.html" data-icon="home">Home</a></li>
+	    <li><a href="search.html" data-icon="search">Explore</a></li>
+	    <li><a href="camera.html" data-icon="plus">Camera</a></li>
+	    <li><a href="#" data-icon="grid">Editor</a></li>
+	    <li><a href="#" data-icon="star">Shopping</a></li>
+          </ul>
+	</nav>
+      </footer>
+    </div>
+
+  </body>
+</html>
