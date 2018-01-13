@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html class="ui-mobile" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Lady DaDa - Home</title>
+    <link rel="stylesheet" href="ladydada.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+
+    <style>
+      @media all and (max-width: 350px) {
+      .my-breakpoint .ui-block-a, 
+      .my-breakpoint .ui-block-b, 
+      .my-breakpoint .ui-block-c { 
+      width: 100%; 
+      float:none; 
+      }
+      }
+
+      .cam_div {
+      width: 100%;
+      height: 100%;
+      float: none;
+      }
+
+      .single_img {
+      max-width: 100%;
+      max-height: 100%;
+      }
+
+      .grid_img {
+      max-width: 99%;
+      }
+
+    </style>
+
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+  </head>
+  <body>
+
+    <!-- step 1: take a picture -->
+    <div id="step1" data-role="page">
+      <header data-role="header">
+	<h1>Lady DaDa - Camera</h1>
+	<a href="#step2" data-role="button" data-icon="action" class="ui-btn-right">Upload</a> 
+      </header>
+
+      <article data-role="content">
+
+	<p>Okay, you took a beautiful pic like this...</p>
+
+	<div class="cam_div ui-responsive">
+	  <img class="single_img" src="data/BOW5.jpg">
+	</div>
+	
+	<div data-role="controlgroup" data-type="horizontal">
+    	  <a href="#" data-role="button">Photo</a>
+     	  <a href="#" data-role="button">Cancel</a>
+     	  <a href="#" data-role="button">Select</a>
+	</div>
+
+	<div data-role="controlgroup" data-type="horizontal">
+    	  <a href="#" data-role="button">Time</a>
+     	  <a href="#" data-role="button">Location</a>
+     	  <a href="#" data-role="button">Desc</a>
+	</div>
+
+	<div data-role="controlgroup" data-type="horizontal">
+    	  <a href="#" data-role="button">Coat</a>
+     	  <a href="#" data-role="button">Shirt</a>
+     	  <a href="#" data-role="button">Dress</a>
+  	  <a href="#" data-role="button">Jeans</a>
+    	  <a href="#" data-role="button">Pants</a>
+    	  <a href="#" data-role="button">Skirts</a>
+    	  <a href="#" data-role="button">Shorts</a>
+    	  <a href="#" data-role="button">Shoes</a>
+    	  <a href="#" data-role="button">Bags</a>
+    	  <a href="#" data-role="button">Accessories</a>
+	</div>
+      </article>
+
+      <footer data-role="footer" data-position="fixed">
+	<nav data-role="navbar">
+          <ul>
+	    <li><a href="index.html" data-icon="home">Home</a></li>
+	    <li><a href="search.html" data-icon="search">Explore</a></li>
+	    <li><a href="camera.html" data-icon="plus">Camera</a></li>
+	    <li><a href="edit.html" data-icon="grid">Editor</a></li>
+	    <li><a href="me.html" data-icon="star">Me</a></li>
+          </ul>
+	</nav>
+      </footer>
+    </div>
+
+    <!-- step 2: select elements -->
+    <div id="step2" data-role="page">
+      <header data-role="header">
+	<h1>Lady DaDa - Camera</h1>
+      </header>
+
+      <article data-role="content">
+	<p>Congradulations, fashion DaDa! The pic has been Uploaded!  Do you want to explore further? (apparently, the system looks too smart to be able to recommend these items...)</p>
+
+	<div class="ui-grid-b my-breakpoint ui-responsive">
+	  <div class="ui-block-a">
+	    <img class="grid_img" src="data/l.jpg">
+	  </div>
+	  <div class="ui-block-b">
+	    <img class="grid_img" src="data/90436618.jpg">
+	  </div>
+	  <div class="ui-block-c">
+	    <img class="grid_img" src="data/120017031.jpg">
+	  </div>
+	  <div class="ui-block-a">
+	    <img class="grid_img" src="data/68683712.jpg">
+	  </div>
+	  <div class="ui-block-b">
+	    <img class="grid_img" src="data/BOW5.jpg">
+	  </div>
+	  <div class="ui-block-c">
+	    <img class="grid_img" src="data/98296654.jpg">
+	  </div>
+	  <div class="ui-block-a">
+	    <img class="grid_img" src="data/l.jpg">
+	  </div>
+	  <div class="ui-block-b">
+	    <img class="grid_img" src="data/102424151.jpg">
+	  </div>
+	  <div class="ui-block-c">
+	    <img class="grid_img" src="data/l.jpg">
+	  </div>
+	</div><!-- /grid-b -->
+
+	<nav data-role="navbar">
+	  <a href="#step1" data-role="button">Take a pic again</a> 
+	  <a href="#" data-role="button">Show me other pics</a> 
+	  <a href="edit.html" data-role="button">Create magzine</a> 
+	</nav>
+
+      </article>
+
+      <footer data-role="footer" data-position="fixed">
+	<nav data-role="navbar">
+          <ul>
+	    <li><a href="index.html" data-icon="home">Home</a></li>
+	    <li><a href="search.html" data-icon="search">Explore</a></li>
+	    <li><a href="camera.html" data-icon="plus">Camera</a></li>
+	    <li><a href="edit.html" data-icon="grid">Editor</a></li>
+	    <li><a href="me.html" data-icon="star">Me</a></li>
+          </ul>
+	</nav>
+      </footer>
+    </div>
+
+  </body>
+</html>

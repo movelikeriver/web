@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="ui-mobile" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Lady DaDa - Edit</title>
+    <link rel="stylesheet" href="ladydada.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+    <script src="js/kinetic-v5.1.0.min.js"></script> 
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>  
+  </head>
+  <body>
+    <!-- start page home -->
+    <div id="home" data-role="page">
+      <header data-role="header">
+      	<a href="search.html" data-icon="back" class="ui-btn-lef">Back</a>
+	<h1>Lady DaDa - Edit</h1>
+	<a href="#" data-icon="save" class="ui-btn-right">Save/Share</a>
+      </header>
+      <div id="canvasDiv">
+    	<!--canvas id="mycanvas" width="300" height="350">
+	    </canvas-->
+	<script>
+	  var sourceImages = {
+	  image0 : "data/BOW5.jpg",
+	  image1 : "data/98296654.jpg",
+	  image2 : "data/120017031.jpg",
+	  image3 : "data/102424151.jpg"
+	  };
+	  var secondSlide = "data/l.jpg";
+	  //var canvas = document.getElementById('mycanvas');
+	  //var context = canvas.getContext("2d"); 
+	  var isPrevSlide = true;
+	  var startPos = null;
+	  var startScale = 1;
+	  var startDistance = -1;
+	  
+	  var stage = new Kinetic.Stage({
+	  container: 'canvasDiv',
+	  width: 300,
+	  height: 350
+	  });
+	  var layer = new Kinetic.Layer();
+	  stage.add(layer);
+
+	  function drawPrev() {
+	  loadImages(sourceImages, function(images) {
+	  var img = new Kinetic.Image({
+	  x: 5, 
+	  y: 5,
+	  width: 300,
+	  height: 340,
+	  image: images.image0,
+	  draggable: false
+	  });
+	  layer.add(img);
+	  img = new Kinetic.Image({
+	  x: 220, 
+	  y: 100, 
+	  width: 60,
+	  height: 60,
+	  image: images.image1,
+	  draggable: true
+	  });
+	  layer.add(img);
+	  img = new Kinetic.Image({
+	  x:50,
+	  y:80,
+	  width:50,
+	  height:50,
+	  image: images.image2,
+	  draggable: true
+	  });
+	  layer.add(img);
+	  img = new Kinetic.Image({
+	  x:200,
+	  y:250,
+	  width:80,
+	  height:80,
+	  image:images.image3,
+	  draggable:true
+	  });
+	  layer.add(img);
+	  layer.draw();
+	  //context.drawImage(images.image0, 5, 5, 300, 340);
+	  //context.drawImage(images.image1, 220, 100, 60, 60);
+	  //context.drawImage(images.image2, 50, 80, 50, 50);
+	  //context.drawImage(images.image3, 200, 250, 80, 80);
+	  });
+	  }
+	  
+	  function drawNext() {
+	  var imgObj = new Image();
+	  imgObj.onload = function() {
+	  var img = new Kinetic.Image({
+	  x: 5, 
+	  y: 5,
+	  width: 300,
+	  height: 340,
+	  image: this,
+	  draggable: false
+	  });
+	  layer.add(img);
+	  layer.draw();
+	  //context.drawImage(this, 5, 5, 300, 340);
+	  };
+	  imgObj.src = secondSlide;			
+	  }
+
+	  function loadImages(sources, callback) {
+	  var images = {};
+	  var loadedImages = numImages = 0;
+	  for (var src in sources)
+	  numImages++;
+
+	  for (var src in sources) {
+	  images[src] = new Image();
+	  images[src].onload = function() {
+	  if (++loadedImages >= numImages) {
+callback(images);
+}
+};
+images[src].src = sources[src];
+}
+}
+
+function prevSlide() {
+if (!isPrevSlide) {
+drawPrev();
+isPrevSlide = true;
+}
+}
+function nextSlide() {
+if (isPrevSlide) {
+drawNext();
+isPrevSlide = false;
+}
+}
+
+/*
+function getTouchPos(elem, e) {
+var offset = $(elem).offset();
+var touch = e.originalEvent.targetTouches[0];
+return {x: touch.pageX - offset.left,
+y: touch.pageY - offset.top};
+}
+$("#canvasDiv").bind("touchstart", function(e) {
+e.preventDefault();
+startPos = getTouchPos(this, e);
+});
+$("#canvasDiv").bind("touchmove", function(e) {
+e.preventDefault();
+var endPos = getTouchPos(this, e);
+var moveRight = endPos.x - startPos.x > 0 ? true : false;
+if (moveRight && isPrevSlide) {
+nextSlide();
+}
+else if (!moveRight && !isPrevSlide) {
+prevSlide();
+}
+startPos = endPos;
+});
+*/
+
+drawPrev();
+</script>
+</div>
+<div data-role="controlgroup" data-type="horizontal">
+  <a href="#" data-role="button" data-icon="arrow-l" onclick="prevSlide()">Prev</a>
+  <a href="#" data-role="button" data-icon="arrow-r" onclick="nextSlide()">Next</a>
+</div>
+<footer data-role="footer" data-position="fixed">
+  <nav data-role="navbar">
+    <ul>
+      <li><a href="#" data-icon="">Template</a></li>
+      <li><a href="#" data-icon="">Remove</a></li>
+      <li><a href="#" data-icon="">Cutout</a></li>
+      <li><a href="#" data-icon="">Preview</a></li>
+      <li><a href="#" data-icon="">Cancel</a></li>
+    </ul>
+  </nav>
+</footer>
+</div>
+
+</body>
+</html>
